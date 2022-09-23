@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,7 @@ import android.widget.Spinner;
 
 import com.example.myapplication.R;
 
+import java.net.URI;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             openNewActivity();
+            //openBrowser();
         }
     });
 
@@ -59,5 +62,11 @@ public class MainActivity extends AppCompatActivity {
     public void openLoginActivity(){
         Intent intent_back = new Intent(this, LoginActivity.class);
         startActivity(intent_back);
+    }
+
+    public void openBrowser(){
+        String search_query = "Doctor Who";
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q="+search_query));
+        startActivity(browserIntent);
     }
 }
