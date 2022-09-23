@@ -63,10 +63,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent_back = new Intent(this, LoginActivity.class);
         startActivity(intent_back);
     }
-
-    public void openBrowser(){
-        String search_query = "Doctor Who";
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q="+search_query));
-        startActivity(browserIntent);
-    }
 }

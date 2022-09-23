@@ -15,6 +15,27 @@ import com.example.myapplication.R;
 public class Test extends AppCompatActivity {
 
     Button button;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_test);
+        Button search_button = (Button) findViewById((R.id.submitButton));
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openBrowser();
+            }
+        });
+    }
+
+    public void openBrowser(){
+        String search_query = "Doctor Who";
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q="+search_query));
+        startActivity(browserIntent);
+    }
+
+
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -39,24 +60,5 @@ public class Test extends AppCompatActivity {
                 break;
             // TODO: Veggie sandwich
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-        Button search_button = (Button) findViewById((R.id.submitButton));
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                openBrowser();
-            }
-        });
-    }
-
-    public void openBrowser(){
-        String search_query = "Doctor Who";
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q="+search_query));
-        startActivity(browserIntent);
     }
 }
