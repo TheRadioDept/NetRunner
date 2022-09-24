@@ -33,6 +33,9 @@ public class Test extends AppCompatActivity {
         CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
     }
 
+
+    //TODO: fix function to disable one checkbox when one is checked.
+    //TODO: Fix crushing and returning to Main Activity one checkbox is selected.
     public void onCheckboxClicked(View view) {
 
         switch(view.getId()) {
