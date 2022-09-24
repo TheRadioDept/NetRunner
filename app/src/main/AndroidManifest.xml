@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ui.login.FinishActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.login.Test"
             android:exported="false" />
         <activity

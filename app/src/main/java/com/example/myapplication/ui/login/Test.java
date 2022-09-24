@@ -6,59 +6,55 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.os.Bundle;
-import android.view.View;
+import android.widget.CompoundButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
 public class Test extends AppCompatActivity {
 
-    Button button;
+    Button submit_button;
+    private CheckBox checkBox1, checkBox2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        Button search_button = (Button) findViewById((R.id.submitButton));
-        button.setOnClickListener(new View.OnClickListener(){
+
+        Button submit_button = (Button) findViewById((R.id.submitButton));
+        submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openBrowser();
+               openResultPage();
+
             }
         });
+        CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkBox1);
+        CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
     }
 
-    public void openBrowser(){
+    public void onCheckboxClicked(View view) {
+
+        switch(view.getId()) {
+
+            case R.id.checkBox1:
+                checkBox2.setChecked(false);
+                break;
+
+            case R.id.checkBox2:
+                checkBox1.setChecked(false);
+                break;
+        }
+    }
+
+    public void openBrowser() {
         String search_query = "Doctor Who";
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q="+search_query));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q=" + search_query));
         startActivity(browserIntent);
     }
 
-
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.checkBox:
-                if (checked){
-                // Put some meat on the sandwich
-                    System.out.println("Hello");
-                }
-                // Put some meat on the sandwich
-            else
-                // Remove the meat
-                break;
-            case R.id.checkBox2:
-                if (checked){
-                    // Cheese me
-                }
-                // Cheese me
-            else
-                // I'm lactose intolerant
-                break;
-            // TODO: Veggie sandwich
-        }
+    public void openResultPage(){
+        Intent result_page = new Intent(this, ResultActivity.class);
+        startActivity(result_page);
     }
 }
