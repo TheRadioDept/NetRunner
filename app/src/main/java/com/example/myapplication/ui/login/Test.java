@@ -13,51 +13,44 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 public class Test extends AppCompatActivity {
 
-    Button submit_button;
-    private CheckBox checkBox1, checkBox2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        Button submit_button = (Button) findViewById((R.id.submitButton));
-        submit_button.setOnClickListener(new View.OnClickListener() {
+        String test_topic = "George_Washington";
+        Intent pass_topic = new Intent (this, ResultActivity.class);
+        pass_topic.putExtra("topic", test_topic);
+        startActivity(pass_topic);
+
+        Button first_answer = (Button) findViewById((R.id.BarakObama));
+        first_answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                openResultPage();
 
             }
         });
-        CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkBox1);
-        CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
+
+        Button second_answer = (Button) findViewById(R.id.George);
+        second_answer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openFinishPage();
+            }
+        });
     }
 
-
-    //TODO: fix function to disable one checkbox when one is checked.
-    //TODO: Fix crushing and returning to Main Activity one checkbox is selected.
-    public void onCheckboxClicked(View view) {
-
-        switch(view.getId()) {
-
-            case R.id.checkBox1:
-                checkBox2.setChecked(false);
-                break;
-
-            case R.id.checkBox2:
-                checkBox1.setChecked(false);
-                break;
-        }
-    }
-
-    public void openBrowser() {
-        String search_query = "Doctor Who";
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q=" + search_query));
-        startActivity(browserIntent);
-    }
 
     public void openResultPage(){
         Intent result_page = new Intent(this, ResultActivity.class);
         startActivity(result_page);
+    }
+
+
+    public void openFinishPage(){
+        Intent finish_page = new Intent(this, FinishActivity.class);
+        startActivity(finish_page);
     }
 }
