@@ -45,6 +45,12 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
+    public void getListLinks() {
+        String url = "https://www.google.com/search?channel=fs&client=ubuntu&q=george+washington";
+        Log.d("myAPP", "Fetching %s..." + url);
+
+    }
+
     public void openBrowser(){
         Intent get_topic = getIntent();
         String test_topic = get_topic.getStringExtra("topic");
