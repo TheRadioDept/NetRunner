@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.Test">
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="65dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
-        app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:onClick="onCheckboxClicked"
-        app:layout_constraintVertical_bias="0.262" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="176dp"
@@ -34,50 +22,26 @@
         app:layout_constraintVertical_bias="0.042" />
 
 
-    <TextView
-        android:id="@+id/first_answer"
-        android:layout_width="128dp"
-        android:layout_height="30dp"
+    <Button
+        android:id="@+id/George"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="George Washington"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.163" />
-
-    <TextView
-        android:id="@+id/second_answer"
-        android:layout_width="128dp"
-        android:layout_height="30dp"
-        android:text="Barak Obama"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.161" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="65dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:onClick="onCheckboxClicked"
-        app:layout_constraintVertical_bias="0.262" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/submitButton"
-        android:layout_width="312dp"
-        android:layout_height="42dp"
-        android:text="Submit"
+        android:id="@+id/BarakObama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Barak Obama"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toEndOf="@+id/George"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

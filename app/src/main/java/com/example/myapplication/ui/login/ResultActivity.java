@@ -5,11 +5,21 @@ import com.example.myapplication.R;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import android.content.Intent;
+
+import java.io.IOException;
+
 public class ResultActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +45,18 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
+    public void getListLinks() {
+        String url = "https://www.google.com/search?channel=fs&client=ubuntu&q=george+washington";
+        Log.d("myAPP", "Fetching %s..." + url);
+
+    }
+
     public void openBrowser(){
-        String search_query = "George Washington";
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q=" + search_query));
+        Intent get_topic = getIntent();
+        String test_topic = get_topic.getStringExtra("topic");
+        String search_query = test_topic;
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/" + search_query));
+        Uri search_topic = Uri.parse("https://en.wikipedia.org/wiki/" + search_query);
         startActivity(browserIntent);
     }
 
