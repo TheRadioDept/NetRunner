@@ -30,14 +30,26 @@
         android:id="@+id/result_view"
         android:layout_width="134dp"
         android:layout_height="110dp"
-        android:text="Your answer is wrong.\n Correct answer is George Washington"
+        android:text="Your answer is wrong.\n Correct answer is: "
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/get_link"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintVertical_bias="0.347" />
+
+    <TextView
+        android:id="@+id/correct_answer"
+        android:layout_width="188dp"
+        android:layout_height="122dp"
+        android:text="George Washington."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/proposal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_view" />
 
     <TextView
         android:id="@+id/proposal"

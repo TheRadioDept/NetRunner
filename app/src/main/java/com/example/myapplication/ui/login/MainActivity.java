@@ -19,43 +19,37 @@ import com.example.myapplication.R;
 import java.net.URI;
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button history_button;
     Button buttonBack;
-    String[] CourseNames = {"Math", "History", "Physics"};
+    Button physics_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //Getting the instance of Spinner and applying OnItemSelectedListener on it
-        Spinner spin = (Spinner) findViewById(R.id.courses_spinner);
 
-//Creating the ArrayAdapter instance having the bank name list
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, CourseNames);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
-        
     buttonBack = (Button) findViewById(R.id.BackButton);    
     
-    button= (Button) findViewById(R.id.Button);
-    button.setOnClickListener(new View.OnClickListener() {
+    history_button= (Button) findViewById(R.id.History);
+    history_button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            openNewActivity();
-            //openBrowser();
+            openQuizPage();
         }
     });
 
-        buttonBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    physics_button = (Button) findViewById(R.id.Physics);
+
+    buttonBack.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
                 openLoginActivity();
             }
-        });
+    });
 }
-    public void openNewActivity(){
-        Intent intent = new Intent(this, Test.class);
+    public void openQuizPage(){
+        Intent intent = new Intent(this, ChooseQuiz.class);
         startActivity(intent);
     }
     

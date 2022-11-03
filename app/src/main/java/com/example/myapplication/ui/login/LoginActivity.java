@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
 
-    String[] bankNames = {"Professor", "Student"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -129,14 +128,6 @@ public class LoginActivity extends AppCompatActivity {
                 openMainActivity();
             }
         });
-
-        Spinner spin = (Spinner) findViewById(R.id.simple_spinner);
-//Creating the ArrayAdapter instance having the bank name list
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, bankNames);
-//Setting the ArrayAdapter data on the Spinner
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
 
     }
     public void openMainActivity(){

@@ -4,53 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.FinishActivity">
+    tools:context=".ui.login.ChooseQuiz">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Correct!"
-        android:textSize="20sp"
+        android:id="@+id/first_text"
+        android:layout_width="112dp"
+        android:layout_height="47dp"
+        android:text="Please choose a Quiz:"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.146" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/presidentQuiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="George Washington is the first president of USA."
-        android:textSize="17sp"
+        android:text="USA President"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintTop_toBottomOf="@+id/first_text"
+        app:layout_constraintVertical_bias="0.119" />
 
     <Button
-        android:id="@+id/returnToMenu"
+        android:id="@+id/goBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-
-    <ImageView
-        android:id="@+id/Washington_portrait"
-        android:layout_width="123dp"
-        android:layout_height="123dp"
-        app:layout_constraintBottom_toTopOf="@+id/returnToMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/gilbert_stuart_williamstown_portrait_of_george_washington" />
-
+        app:layout_constraintTop_toBottomOf="@+id/presidentQuiz"
+        app:layout_constraintVertical_bias="0.841" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
