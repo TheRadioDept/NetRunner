@@ -11,6 +11,8 @@ import android.widget.CompoundButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
+
+//Quiz activity
 public class Test extends AppCompatActivity {
 
 
