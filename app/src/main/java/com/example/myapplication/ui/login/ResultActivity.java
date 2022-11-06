@@ -52,36 +52,8 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void openBrowser(){
-        Intent get_topic = getIntent();
-        String test_topic = get_topic.getStringExtra("topic");
-        String search_query = test_topic;
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/" + search_query));
-        Uri search_topic = Uri.parse("https://en.wikipedia.org/wiki/" + search_query);
-        startActivity(browserIntent);
-
-        Document doc;
-        try
-        {
-            //Need http protocol
-            doc = Jsoup.connect("https://www.google.com/search?channel=fs&client=ubuntu&q=george+washington").get();
-
-            //get page title
-            String title = doc.title();
-            System.out.println("title : " + title);
-
-            //get all links
-            Elements links = doc.select("a[href]");
-            for (Element link : links ) {
-
-                //get the value from href attribute
-                System.out.println("\nlink : " +  link.attr("href"));
-                System.out.println("text : " + link.text());
-            }
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
+        Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/George_Washington"));
+        startActivity(browser);
     }
 
 
